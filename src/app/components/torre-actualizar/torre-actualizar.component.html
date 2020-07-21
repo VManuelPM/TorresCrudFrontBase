@@ -1,0 +1,19 @@
+<div class="container mt-3" *ngIf="torre">
+    <div class="row card">
+        <div class="col-md-4 card-body m-auto">
+            <form (ngSubmit)="actualizarTorre()" novalidate #form="ngForm">
+                <div class="form-group">
+                    <label for="nombreTorre">Nombre</label>
+                    <input id="nombreTorre" type="text" class="form-control" name="nombreTorre"
+                        [(ngModel)]="torre.nombreTorre" required />
+                </div>
+                <div class="form-group">
+                    <label for="cantidadAptos">Cantidad Aptos</label>
+                    <input id="cantidadAptos" type="number" class="form-control" name="cantidadAptos"
+                        [(ngModel)]="torre.cantidadAptos" required />
+                </div>
+                <button class="btn btn-success btn-block" [disabled]="!form.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

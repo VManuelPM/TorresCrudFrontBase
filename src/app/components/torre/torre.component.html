@@ -1,0 +1,28 @@
+<div class="col-6 m-auto">
+    <table class="table text-center mt-2">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"><i class="fa fa-building"></i> Torre</th>
+                <th scope="col"><i class="fa fa-home"></i>Apartamentos</th>
+                <th scope="col"><i class="fa fa-cog"></i> Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let torre of torres">
+                <td>{{torre.nombreTorre}}</td>
+                <td>{{torre.cantidadAptos}}</td>
+                <td>
+                    <button class="btn btn-success" routerLink="/editarTorre/{{torre.idTorre}}">
+                        <i class="fa fa-pen"></i>
+                    </button>
+                    <button class="btn btn-danger" (click)="eliminarTorre(torre.idTorre)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                    <button class="btn btn-warning" routerLink="/detalleTorre/{{torre.idTorre}}">
+                        <i class="fa fa-eye"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
